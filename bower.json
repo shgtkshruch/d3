@@ -1,0 +1,9 @@
+{
+  "name": "d3",
+  "private": true,
+  "dependencies": {
+    "jquery": "*",
+    "d3": "~3.4.11"
+  },
+  "devDependencies": {}
+}
