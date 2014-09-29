@@ -1,0 +1,22 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset='UTF-8')
+    title plot
+    meta(content='IE=edge', http-equiv='X-UA-Compatible')
+    meta(content='author', name='author')
+    meta(content='description', name='description')
+    meta(content='keywords', name='keywords')
+    meta(content='width=device-width, initial-scale=1' name='viewport')
+    meta(content='telephone=no', name='format-detection')
+    
+    link(rel='stylesheet', href='styles/plot.css', media='all')
+  body
+    #js-d3
+
+    // build:js scripts/vendor.js
+    // bower:js
+    script(src='../bower_components/d3/d3.js')
+    // endbower
+    // endbuild
+    script(src='scripts/plot.js')
