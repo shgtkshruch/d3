@@ -21,7 +21,7 @@ gulp.task 'browser-sync', ->
 
 wiredep = require('wiredep').stream
 gulp.task 'wiredep', ->
-  gulp.src config.src + '/index.jade'
+  gulp.src config.src + '/**/*.jade'
     .pipe wiredep()
     .pipe gulp.dest config.src
 
@@ -32,7 +32,7 @@ gulp.task 'wiredep', ->
 
 gulp.task 'html', ['jade'], ->
   assets = $.useref.assets()
-  gulp.src config.dest + '/index.html'
+  gulp.src config.dest + '/**/*.html'
     .pipe wiredep()
     .pipe assets
     .pipe assets.restore()
@@ -40,8 +40,10 @@ gulp.task 'html', ['jade'], ->
     .pipe gulp.dest config.dest
 
 gulp.task 'jade', ->
-  gulp.src config.src + '/index.jade'
+  gulp.src config.src + '/**/*.jade'
     .pipe $.plumber()
+    .pipe $.changed config.dest,
+      extension: '.html'
     .pipe $.jade
       pretty: true
     .pipe gulp.dest config.dest
@@ -51,7 +53,6 @@ gulp.task 'jade', ->
 gulp.task 'sass', ->
   gulp.src config.src + '/styles/**/*.scss'
     .pipe $.plumber()
-    .pipe $.filter '**/style.scss'
     .pipe $.rubySass
       style: 'expanded'
     .pipe $.autoprefixer 'last 2 version', 'ie 9', 'ie 8'
@@ -70,7 +71,7 @@ gulp.task 'coffee', ->
       stream: true
 
 gulp.task 'default', ['build', 'browser-sync'], ->
-  gulp.watch config.src + '/index.jade', ['jade']
+  gulp.watch config.src + '/**/*.jade', ['jade']
   gulp.watch config.src + '/styles/*.scss', ['sass']
   gulp.watch config.src + '/scripts/*.coffee', ['coffee']
 
