@@ -2,17 +2,21 @@ doctype html
 html(lang="ja")
   head
     meta(charset='UTF-8')
-    title Interacive Data Visualization for the Web
+    title axis
     meta(content='IE=edge', http-equiv='X-UA-Compatible')
     meta(content='author', name='author')
     meta(content='description', name='description')
     meta(content='keywords', name='keywords')
     meta(content='width=device-width, initial-scale=1' name='viewport')
     meta(content='telephone=no', name='format-detection')
-    link(rel='stylesheet', href='styles/style.css', media='all')
+    
+    link(rel='stylesheet', href='styles/axis.css', media='all')
   body
-    - list = ['chart', 'plot', 'scale', 'axis']
-    ul
-      each li in list
-        li
-          a(href="#{li}.html") #{li}
+    #js-d3
+
+    // build:js scripts/vendor.js
+    // bower:js
+    script(src='../bower_components/d3/d3.js')
+    // endbower
+    // endbuild
+    script(src='scripts/axis.js')
