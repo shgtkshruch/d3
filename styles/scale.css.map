@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK;EACH,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;;;AAGf,MAAO;EACL,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,qBAAqB;;;AAGlC,GAAI;EACF,aAAa,EAAE,cAAc;EAC7B,WAAW,EAAE,cAAc",
+"sources": ["../scale.scss"],
+"names": [],
+"file": "scale.css"
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,GAAI;EACF,MAAM,EAAE,cAAc",
+"sources": ["../plot.scss"],
+"names": [],
+"file": "plot.css"
+}
