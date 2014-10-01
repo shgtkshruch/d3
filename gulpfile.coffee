@@ -63,7 +63,7 @@ gulp.task 'sass', ->
 gulp.task 'coffee', ->
   gulp.src config.src + '/scripts/*.coffee'
     .pipe $.plumber()
-    .pipe $.changed config.dest,
+    .pipe $.changed config.dest + '/scripts',
       extension: '.js'
     .pipe $.coffee()
     .pipe gulp.dest config.dest + '/scripts'
